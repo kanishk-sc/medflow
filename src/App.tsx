@@ -1,128 +1,132 @@
-import { Calendar, Mic, Building2 } from 'lucide-react';
+import { Building2, Calendar, Github, Mic } from 'lucide-react';
+
+const concepts = [
+  {
+    icon: Calendar,
+    title: 'Scheduling workspace',
+    description:
+      'A visual concept for coordinating appointments, rooms, and reminders from one administrative queue.',
+    previewLabel: 'Synthetic schedule preview',
+    preview: (
+      <div className="space-y-3" aria-hidden="true">
+        <div className="h-3 rounded bg-blue-200" />
+        <div className="h-3 w-2/3 rounded bg-blue-200" />
+        <div className="h-3 w-5/6 rounded bg-blue-200" />
+      </div>
+    ),
+  },
+  {
+    icon: Mic,
+    title: 'Conversation notes',
+    description:
+      'A static mock-up of how a transcript could be organized for review; no audio is recorded or processed.',
+    previewLabel: 'Synthetic transcript preview',
+    preview: (
+      <div className="space-y-4" aria-hidden="true">
+        <div>
+          <div className="mb-2 h-2 w-16 rounded bg-slate-300" />
+          <div className="h-2 rounded bg-slate-200" />
+        </div>
+        <div>
+          <div className="mb-2 h-2 w-20 rounded bg-slate-300" />
+          <div className="h-2 w-4/5 rounded bg-slate-200" />
+        </div>
+      </div>
+    ),
+  },
+  {
+    icon: Building2,
+    title: 'Operations overview',
+    description:
+      'A dashboard concept for surfacing room, staff, and reporting status without connecting to hospital systems.',
+    previewLabel: 'Synthetic operations preview',
+    preview: (
+      <div className="grid grid-cols-[auto_1fr] items-center gap-4" aria-hidden="true">
+        <Building2 className="h-10 w-10 text-slate-700" />
+        <div className="space-y-3">
+          <div className="h-3 rounded bg-emerald-200" />
+          <div className="h-3 w-3/4 rounded bg-violet-200" />
+          <div className="h-3 w-5/6 rounded bg-amber-200" />
+        </div>
+      </div>
+    ),
+  },
+];
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#faf9f3]">
-      {/* Hero Section */}
-      <main className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          {/* Main Heading */}
-          <div className="text-center mb-12 mt-16">
-            <h1 className="text-[120px] leading-[0.9] mb-8 font-serif">
-              <span className="px-4 rounded-2xl text-white" style={{ backgroundColor: 'rgb(0, 77, 73)' }}>MedFlow</span>
-            </h1>
-            <h2 className="text-[80px] leading-[0.9] mb-8 font-serif">
-              <span className="text-gray-400">Don't type,</span>
-              <span className="text-black"> just speak</span>
-            </h2>
+    <div className="min-h-screen bg-[#faf9f3] text-slate-950">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
 
-            <p className="text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-              An AI-powered assistant that uses voice, automation, and intelligent agents to handle doctors' non-medical tasks — from scheduling to summaries to hospital logistics.
-            </p>
+      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+        <span className="font-serif text-xl font-bold">MedFlow</span>
+        <span className="rounded-full border border-emerald-900/20 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-950">
+          Interface prototype
+        </span>
+      </header>
 
-            <button className="px-8 py-3 bg-[#e9d5ff] border-2 border-black rounded-lg font-medium text-lg hover:bg-[#dfc8f7] inline-flex items-center gap-2">
-              Login
-            </button>
+      <main id="main-content" className="mx-auto max-w-7xl px-6 pb-20 pt-12">
+        <section className="mx-auto max-w-4xl text-center" aria-labelledby="hero-title">
+          <p className="mb-5 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-emerald-900">
+            Non-clinical concept · synthetic previews
+          </p>
+          <h1 id="hero-title" className="font-serif text-6xl leading-none sm:text-7xl lg:text-8xl">
+            <span className="inline-block rounded-2xl bg-[#004d49] px-4 py-2 text-white">MedFlow</span>
+          </h1>
+          <h2 className="mt-7 font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            Exploring calmer administrative workflows for care teams
+          </h2>
+          <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-slate-700">
+            MedFlow is a front-end prototype for scheduling, note organization, and hospital operations.
+            It uses no patient data, provides no medical advice, and is not connected to clinical systems.
+          </p>
+          <a
+            className="mt-8 inline-flex items-center gap-2 rounded-lg border-2 border-slate-950 bg-white px-5 py-3 font-semibold transition hover:bg-slate-100"
+            href="https://github.com/kanishk-sc/medflow"
+          >
+            <Github className="h-5 w-5" aria-hidden="true" />
+            View source
+          </a>
+        </section>
+
+        <section className="mt-24" aria-labelledby="concepts-title">
+          <div className="mb-8 max-w-2xl">
+            <p className="font-mono text-sm font-semibold uppercase tracking-[0.16em] text-emerald-900">Concept areas</p>
+            <h2 id="concepts-title" className="mt-2 font-serif text-3xl sm:text-4xl">Three static workflow explorations</h2>
           </div>
 
-          {/* Features Section */}
-          <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Tile 1 - Smart Appointment Scheduling */}
-            <div className="flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <Calendar className="w-6 h-6" />
-                <h3 className="text-xl font-semibold">Smart Appointment Scheduling</h3>
-              </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Book, reschedule, and confirm appointments automatically with AI that handles calendars, rooms, and notifications.
-              </p>
-              <div className="rounded-3xl p-8 flex-1 flex items-center justify-center" style={{ backgroundColor: 'rgb(0, 77, 73)' }}>
-                <div className="bg-white rounded-2xl p-6 shadow-lg w-full max-w-xs">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Calendar className="w-5 h-5 text-gray-700" />
-                    <span className="text-sm font-medium">Calendar</span>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="h-3 bg-blue-200 rounded w-3/4"></div>
-                    <div className="h-3 bg-blue-200 rounded w-1/2"></div>
-                    <div className="h-3 bg-blue-200 rounded w-5/6"></div>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            {concepts.map(({ icon: Icon, title, description, previewLabel, preview }) => (
+              <article key={title} className="flex flex-col rounded-2xl border border-slate-900/15 bg-white p-6 shadow-sm">
+                <div className="mb-4 flex items-center gap-3">
+                  <Icon className="h-6 w-6 text-emerald-900" aria-hidden="true" />
+                  <h3 className="text-xl font-semibold">{title}</h3>
+                </div>
+                <p className="leading-relaxed text-slate-700">{description}</p>
+                <div className="mt-7 flex flex-1 items-center rounded-xl bg-[#004d49] p-6">
+                  <div className="w-full rounded-xl bg-white p-5 shadow-lg">
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-slate-500">{previewLabel}</p>
+                    {preview}
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Tile 2 - Real-Time AI Note Taking */}
-            <div className="flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <Mic className="w-6 h-6" />
-                <h3 className="text-xl font-semibold">Real-Time AI Note Taking</h3>
-              </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Automatically capture and summarize doctor–patient conversations into structured medical notes using voice and LLMs.
-              </p>
-              <div className="rounded-3xl p-8 flex-1 flex items-center justify-center" style={{ backgroundColor: 'rgb(0, 77, 73)' }}>
-                <div className="bg-white rounded-2xl p-6 shadow-lg w-full max-w-xs">
-                  <div className="mb-4">
-                    <Mic className="w-5 h-5 text-blue-500 mb-2" />
-                    <p className="text-xs text-gray-500 mb-2">Recording conversation...</p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-sm">
-                      <span className="font-medium">Patient:</span>
-                      <div className="h-2 bg-gray-200 rounded w-full mt-1"></div>
-                    </div>
-                    <div className="text-sm">
-                      <span className="font-medium">Doctor:</span>
-                      <div className="h-2 bg-gray-200 rounded w-4/5 mt-1"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Tile 3 - Intelligent Hospital Operations */}
-            <div className="flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <Building2 className="w-6 h-6" />
-                <h3 className="text-xl font-semibold">Intelligent Hospital Operations</h3>
-              </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Automate room allocation, budgeting, and hospital logistics with AI agents that coordinate labs, staff, and reports.
-              </p>
-              <div className="rounded-3xl p-8 flex-1 flex items-center justify-center" style={{ backgroundColor: 'rgb(0, 77, 73)' }}>
-                <div className="relative w-full max-w-xs h-48">
-                  <div className="absolute left-8 top-1/2 -translate-y-1/2 bg-white rounded-xl p-4 shadow-lg">
-                    <Building2 className="w-8 h-8 text-gray-700" />
-                  </div>
-                  <div className="absolute right-2 top-4 bg-white rounded-xl p-3 shadow-lg w-28">
-                    <div className="h-2 bg-blue-200 rounded mb-2"></div>
-                    <div className="h-2 bg-gray-200 rounded w-3/4"></div>
-                  </div>
-                  <div className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-xl p-3 shadow-lg w-28">
-                    <div className="h-2 bg-green-200 rounded mb-2"></div>
-                    <div className="h-2 bg-gray-200 rounded w-2/3"></div>
-                  </div>
-                  <div className="absolute right-2 bottom-4 bg-white rounded-xl p-3 shadow-lg w-28">
-                    <div className="h-2 bg-purple-200 rounded mb-2"></div>
-                    <div className="h-2 bg-gray-200 rounded w-4/5"></div>
-                  </div>
-                  {/* Connection lines */}
-                  <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
-                    <line x1="25%" y1="50%" x2="60%" y2="25%" stroke="white" strokeWidth="2" strokeDasharray="5,5" opacity="0.5"/>
-                    <line x1="25%" y1="50%" x2="60%" y2="50%" stroke="white" strokeWidth="2" strokeDasharray="5,5" opacity="0.5"/>
-                    <line x1="25%" y1="50%" x2="60%" y2="75%" stroke="white" strokeWidth="2" strokeDasharray="5,5" opacity="0.5"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
+        </section>
 
-        </div>
+        <aside className="mt-12 rounded-xl border border-amber-700/25 bg-amber-50 p-5 text-sm leading-relaxed text-amber-950">
+          <strong>Prototype scope:</strong> Every screen on this page is illustrative and uses synthetic placeholders. Authentication,
+          voice capture, AI agents, integrations, persistence, and clinical validation are not implemented.
+        </aside>
       </main>
+
+      <footer className="border-t border-slate-900/15 px-6 py-8 text-center text-sm text-slate-600">
+        MedFlow is a portfolio prototype, not a medical device or production healthcare service.
+      </footer>
     </div>
   );
 }
 
 export default App;
-
-export default App
